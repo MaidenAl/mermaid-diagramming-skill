@@ -1,0 +1,432 @@
+[
+  {
+    "name": "Flowchart",
+    "keyword": "flowchart",
+    "aliases": [
+      "flow"
+    ],
+    "what": "A path of actions and decisions.",
+    "when": "Use for procedures, algorithms, or branching outcomes.",
+    "how": "Choose a direction such as LR or TD; connect named nodes with arrows and label decision branches.",
+    "starter": "flowchart LR\n  Start --> Decide{Ready?}\n  Decide -->|Yes| Done\n  Decide -->|No| Wait",
+    "docs": "https://mermaid.js.org/syntax/flowchart.html"
+  },
+  {
+    "name": "Class",
+    "keyword": "classDiagram",
+    "aliases": [
+      "class diagram"
+    ],
+    "what": "Classes, members, and structural relationships.",
+    "when": "Use for object models and interface or inheritance design.",
+    "how": "Declare classes and connect them with the class relationship arrows.",
+    "starter": "classDiagram\n  class Customer\n  class Order\n  Customer --> Order : places",
+    "docs": "https://mermaid.js.org/syntax/classDiagram.html"
+  },
+  {
+    "name": "Sequence",
+    "keyword": "sequenceDiagram",
+    "aliases": [
+      "sequence diagram"
+    ],
+    "what": "Messages exchanged in time order.",
+    "when": "Use for request flows, API calls, and interactions among participants.",
+    "how": "Declare participants and write arrows from sender to receiver in chronological order.",
+    "starter": "sequenceDiagram\n  participant User\n  participant API\n  User->>API: Request\n  API-->>User: Response",
+    "docs": "https://mermaid.js.org/syntax/sequenceDiagram.html"
+  },
+  {
+    "name": "Entity Relationship",
+    "keyword": "erDiagram",
+    "aliases": [
+      "ER",
+      "ERD"
+    ],
+    "what": "Stored entities and their cardinality.",
+    "when": "Use for database schemas and data relationships.",
+    "how": "Define entities and connect them with cardinality markers such as ||--o{.",
+    "starter": "erDiagram\n  CUSTOMER ||--o{ ORDER : places\n  CUSTOMER {\n    int id PK\n  }",
+    "docs": "https://mermaid.js.org/syntax/entityRelationshipDiagram.html"
+  },
+  {
+    "name": "State",
+    "keyword": "stateDiagram-v2",
+    "aliases": [
+      "state diagram"
+    ],
+    "what": "Allowed states and transitions of one thing.",
+    "when": "Use for lifecycles, protocols, or state machines.",
+    "how": "Name states and connect transitions; use [*] for a start or end.",
+    "starter": "stateDiagram-v2\n  [*] --> Idle\n  Idle --> Active : start\n  Active --> [*] : stop",
+    "docs": "https://mermaid.js.org/syntax/stateDiagram.html"
+  },
+  {
+    "name": "Mindmap",
+    "keyword": "mindmap",
+    "aliases": [
+      "mind map"
+    ],
+    "what": "Ideas branching from a central topic.",
+    "when": "Use for brainstorming or a topic outline without a strict process order.",
+    "how": "Put the root first and indent branches below their parents.",
+    "starter": "mindmap\n  root((Project))\n    Goals\n    Risks",
+    "docs": "https://mermaid.js.org/syntax/mindmap.html"
+  },
+  {
+    "name": "Architecture",
+    "keyword": "architecture-beta",
+    "aliases": [
+      "architecture diagram"
+    ],
+    "what": "Services, groups, and their deployed connections.",
+    "when": "Use for infrastructure and service topology.",
+    "how": "Declare services or groups with icons, then connect service sides with directional edges.",
+    "starter": "architecture-beta\n  service api(server)[API]\n  service db(database)[Database]\n  api:R --> L:db",
+    "docs": "https://mermaid.js.org/syntax/architecture.html",
+    "minimum_version": "11.1.0"
+  },
+  {
+    "name": "Block",
+    "keyword": "block-beta",
+    "aliases": [
+      "block diagram"
+    ],
+    "what": "A compact arrangement of named parts.",
+    "when": "Use for a simple component layout where placement matters more than flow detail.",
+    "how": "Declare a column count and place blocks in rows; quote display labels inside brackets.",
+    "starter": "block-beta\n  columns 2\n  a[\"Input\"] b[\"Output\"]",
+    "docs": "https://mermaid.js.org/syntax/block.html"
+  },
+  {
+    "name": "C4",
+    "keyword": "C4Context",
+    "aliases": [
+      "C4 diagram"
+    ],
+    "what": "Software architecture at system, container, or component level.",
+    "when": "Use when the audience needs a defined architecture level and system boundaries.",
+    "how": "Choose C4Context, C4Container, C4Component, C4Dynamic, or C4Deployment; declare people and systems, then Rel links.",
+    "starter": "C4Context\n  Person(user, \"User\")\n  System(app, \"App\")\n  Rel(user, app, \"Uses\")",
+    "docs": "https://mermaid.js.org/syntax/c4.html"
+  },
+  {
+    "name": "Cynefin Framework",
+    "keyword": "cynefin-beta",
+    "aliases": [
+      "cynefin"
+    ],
+    "what": "Situations grouped by how predictable and knowable they are.",
+    "when": "Use to discuss clear, complicated, complex, chaotic, or uncertain decision contexts.",
+    "how": "Open each domain by name, add quoted items, and optionally show transitions between domains.",
+    "starter": "cynefin-beta\n  complex\n  \"Unknown pattern\"\n  clear\n  \"Known procedure\"",
+    "docs": "https://mermaid.js.org/syntax/cynefin.html",
+    "minimum_version": "11.16.0"
+  },
+  {
+    "name": "Event Modeling",
+    "keyword": "eventmodeling",
+    "aliases": [
+      "event model"
+    ],
+    "what": "A timeline of commands, events, read models, and user views.",
+    "when": "Use for event-driven business behavior and information change over time.",
+    "how": "Add numbered time frames with entity kinds such as ui, cmd, evt, and rmo.",
+    "starter": "eventmodeling\n  tf 01 ui CartUI\n  tf 02 cmd AddItem\n  tf 03 evt ItemAdded",
+    "docs": "https://mermaid.js.org/syntax/eventmodeling.html",
+    "minimum_version": "11.15.0"
+  },
+  {
+    "name": "Gantt",
+    "keyword": "gantt",
+    "aliases": [
+      "gantt chart"
+    ],
+    "what": "Scheduled tasks and durations on a calendar.",
+    "when": "Use for project plans with dates and dependencies.",
+    "how": "Set dateFormat, add sections, then define each task with a start date and duration or end date.",
+    "starter": "gantt\n  dateFormat YYYY-MM-DD\n  section Plan\n  Design :a1, 2026-01-01, 5d",
+    "docs": "https://mermaid.js.org/syntax/gantt.html"
+  },
+  {
+    "name": "Git",
+    "keyword": "gitGraph",
+    "aliases": [
+      "git graph"
+    ],
+    "what": "Commits, branches, and merges.",
+    "when": "Use to explain version-control history or a branch strategy.",
+    "how": "Add commit, branch, checkout, and merge statements in their intended order.",
+    "starter": "gitGraph\n  commit\n  branch feature\n  checkout feature\n  commit",
+    "docs": "https://mermaid.js.org/syntax/gitgraph.html"
+  },
+  {
+    "name": "Ishikawa",
+    "keyword": "ishikawa-beta",
+    "aliases": [
+      "fishbone",
+      "cause and effect"
+    ],
+    "what": "Possible causes feeding into a stated problem.",
+    "when": "Use for root-cause discussions with grouped contributing factors.",
+    "how": "Put the problem first; indent cause groups and their subcauses below it.",
+    "starter": "ishikawa-beta\n  Slow response\n  Code\n    Expensive query\n  Infrastructure\n    Busy server",
+    "docs": "https://mermaid.js.org/syntax/ishikawa.html",
+    "minimum_version": "11.12.3"
+  },
+  {
+    "name": "Kanban",
+    "keyword": "kanban",
+    "aliases": [
+      "kanban board"
+    ],
+    "what": "Work cards arranged in workflow columns.",
+    "when": "Use for current work state and task movement.",
+    "how": "Declare columns, then indent cards beneath each column.",
+    "starter": "kanban\n  todo[To do]\n    task1[Write tests]\n  done[Done]\n    task2[Plan work]",
+    "docs": "https://mermaid.js.org/syntax/kanban.html"
+  },
+  {
+    "name": "Packet",
+    "keyword": "packet",
+    "aliases": [
+      "packet diagram"
+    ],
+    "what": "Bit fields in a packet or register.",
+    "when": "Use for wire formats and binary layouts.",
+    "how": "Give each field a bit range or width and a quoted label.",
+    "starter": "packet\n  0-7: \"Version\"\n  8-15: \"Flags\"",
+    "docs": "https://mermaid.js.org/syntax/packet.html",
+    "minimum_version": "11.0.0"
+  },
+  {
+    "name": "Pie",
+    "keyword": "pie",
+    "aliases": [
+      "pie chart"
+    ],
+    "what": "Parts of one whole.",
+    "when": "Use for a small number of nonnegative categories that sum to a meaningful whole.",
+    "how": "Write quoted category labels followed by numeric values.",
+    "starter": "pie\n  \"A\" : 60\n  \"B\" : 40",
+    "docs": "https://mermaid.js.org/syntax/pie.html"
+  },
+  {
+    "name": "Quadrant",
+    "keyword": "quadrantChart",
+    "aliases": [
+      "quadrant chart"
+    ],
+    "what": "Items positioned on two qualitative axes.",
+    "when": "Use for priority or comparison matrices with two dimensions.",
+    "how": "Label both axes and quadrants, then place each item at normalized x,y coordinates.",
+    "starter": "quadrantChart\n  x-axis Low --> High\n  y-axis Low --> High\n  quadrant-1 Focus\n  Item: [0.7, 0.8]",
+    "docs": "https://mermaid.js.org/syntax/quadrantChart.html"
+  },
+  {
+    "name": "Radar",
+    "keyword": "radar-beta",
+    "aliases": [
+      "radar chart",
+      "spider chart"
+    ],
+    "what": "Several entities compared across the same dimensions.",
+    "when": "Use for a small set of comparable multivariate scores.",
+    "how": "Declare axes and curves with values in the same axis order.",
+    "starter": "radar-beta\n  axis Speed, Quality, Cost\n  curve OptionA{4, 3, 2}\n  curve OptionB{2, 4, 3}",
+    "docs": "https://mermaid.js.org/syntax/radar.html",
+    "minimum_version": "11.6.0"
+  },
+  {
+    "name": "Railroad (ABNF)",
+    "keyword": "railroad-abnf-beta",
+    "aliases": [
+      "ABNF"
+    ],
+    "what": "Syntax rules written in Augmented Backus-Naur Form.",
+    "when": "Use for IETF-style or other existing ABNF grammars.",
+    "how": "Write rules as name = definition ; and use / for alternatives.",
+    "starter": "railroad-abnf-beta\n  value = \"yes\" / \"no\" ;",
+    "docs": "https://mermaid.ai/open-source/syntax/railroad.html",
+    "minimum_version": "11.16.0"
+  },
+  {
+    "name": "Railroad (EBNF)",
+    "keyword": "railroad-ebnf-beta",
+    "aliases": [
+      "EBNF"
+    ],
+    "what": "Syntax rules written in Extended Backus-Naur Form.",
+    "when": "Use for language or configuration grammars expressed in EBNF.",
+    "how": "Write rules as name = definition ; and use | for alternatives.",
+    "starter": "railroad-ebnf-beta\n  value = \"yes\" | \"no\" ;",
+    "docs": "https://mermaid.ai/open-source/syntax/railroad.html",
+    "minimum_version": "11.16.0"
+  },
+  {
+    "name": "Railroad (IR)",
+    "keyword": "railroad-beta",
+    "aliases": [
+      "railroad primitives",
+      "railroad intermediate representation"
+    ],
+    "what": "Syntax paths built from explicit railroad primitives.",
+    "when": "Use when a grammar needs a layout that ABNF, EBNF, or PEG cannot express cleanly.",
+    "how": "Write rule = constructor(...) ; with terminal, sequence, choice, and related primitives.",
+    "starter": "railroad-beta\n  value = choice(terminal(\"yes\"), terminal(\"no\")) ;",
+    "docs": "https://mermaid.ai/open-source/syntax/railroad.html",
+    "minimum_version": "11.16.0"
+  },
+  {
+    "name": "Railroad (PEG)",
+    "keyword": "railroad-peg-beta",
+    "aliases": [
+      "PEG"
+    ],
+    "what": "Syntax rules written as a Parsing Expression Grammar.",
+    "when": "Use for ordered-choice parser grammars.",
+    "how": "Write rules as name <- definition ; and use / for ordered alternatives.",
+    "starter": "railroad-peg-beta\n  value <- \"yes\" / \"no\" ;",
+    "docs": "https://mermaid.ai/open-source/syntax/railroad.html",
+    "minimum_version": "11.16.0"
+  },
+  {
+    "name": "Requirement",
+    "keyword": "requirementDiagram",
+    "aliases": [
+      "requirement diagram"
+    ],
+    "what": "Requirements and the elements that satisfy or verify them.",
+    "when": "Use for traceability between formal requirements and implementation or tests.",
+    "how": "Declare a requirement with id, text, risk, and verifymethod; connect an element using a typed link.",
+    "starter": "requirementDiagram\n  requirement response_time {\n    id: R1\n    text: Reply quickly\n    risk: high\n    verifymethod: test\n  }",
+    "docs": "https://mermaid.js.org/syntax/requirementDiagram.html"
+  },
+  {
+    "name": "Sankey",
+    "keyword": "sankey-beta",
+    "aliases": [
+      "sankey diagram"
+    ],
+    "what": "Quantified flow between stages or categories.",
+    "when": "Use for resource, traffic, or cost flows where widths represent amounts.",
+    "how": "Write CSV-like source,target,value rows after the declaration.",
+    "starter": "sankey-beta\n  Input,Output,5",
+    "docs": "https://mermaid.js.org/syntax/sankey.html"
+  },
+  {
+    "name": "Timeline",
+    "keyword": "timeline",
+    "aliases": [
+      "timeline diagram"
+    ],
+    "what": "Events arranged by date or period.",
+    "when": "Use for milestones or historical progression without task durations.",
+    "how": "Add a title, then period : event lines in order.",
+    "starter": "timeline\n  title Project\n  2026 : Start\n  2027 : Finish",
+    "docs": "https://mermaid.js.org/syntax/timeline.html"
+  },
+  {
+    "name": "TreeView",
+    "keyword": "treeView-beta",
+    "aliases": [
+      "tree view",
+      "file tree"
+    ],
+    "what": "A directory-like nested hierarchy.",
+    "when": "Use for file trees and other indented parent-child lists.",
+    "how": "Indent children beneath parents; end directory labels with /.",
+    "starter": "treeView-beta\n  project/\n    src/\n      main.go\n    README.md",
+    "docs": "https://mermaid.js.org/syntax/treeView.html",
+    "minimum_version": "11.14.0"
+  },
+  {
+    "name": "Treemap",
+    "keyword": "treemap-beta",
+    "aliases": [
+      "tree map"
+    ],
+    "what": "Hierarchical values shown as nested areas.",
+    "when": "Use when both grouping and relative size matter.",
+    "how": "Indent quoted child labels beneath parents and give leaves numeric values.",
+    "starter": "treemap-beta\n  \"Project\"\n    \"Code\": 70\n    \"Docs\": 30",
+    "docs": "https://mermaid.js.org/syntax/treemap.html"
+  },
+  {
+    "name": "Use Case",
+    "keyword": "usecase-beta",
+    "aliases": [
+      "use case diagram"
+    ],
+    "what": "Actors and goals they perform through a system.",
+    "when": "Use for functional scope and user-system interactions.",
+    "how": "Declare actors and use cases, optionally a system boundary, then connect them.",
+    "starter": "usecase-beta\n  actor Customer(\"Customer\")\n  Checkout(\"Place order\")\n  Customer --> Checkout",
+    "docs": "https://mermaid.js.org/syntax/usecase.html",
+    "minimum_version": "12.0.0"
+  },
+  {
+    "name": "User Journey",
+    "keyword": "journey",
+    "aliases": [
+      "journey diagram"
+    ],
+    "what": "A person's steps and experience through a task.",
+    "when": "Use for service or product experience, including satisfaction at each step.",
+    "how": "Group tasks into sections and assign each step a score and actor.",
+    "starter": "journey\n  title Signup\n  section Account\n    Register: 5: User\n    Confirm: 3: User",
+    "docs": "https://mermaid.js.org/syntax/userJourney.html"
+  },
+  {
+    "name": "Venn",
+    "keyword": "venn-beta",
+    "aliases": [
+      "venn diagram"
+    ],
+    "what": "Overlap among sets.",
+    "when": "Use for membership and shared categories, not time or flow.",
+    "how": "Declare sets before any union that names their overlap.",
+    "starter": "venn-beta\n  set Frontend\n  set Backend\n  union Frontend,Backend[\"APIs\"]",
+    "docs": "https://mermaid.js.org/syntax/venn.html",
+    "minimum_version": "11.12.3"
+  },
+  {
+    "name": "Wardley Maps",
+    "keyword": "wardley-beta",
+    "aliases": [
+      "wardley map",
+      "wardley"
+    ],
+    "what": "A value chain plotted by visibility and evolution.",
+    "when": "Use for strategic discussion of user needs, dependencies, and how mature components are.",
+    "how": "Place anchors or components at [visibility, evolution] coordinates, then connect dependencies.",
+    "starter": "wardley-beta\n  anchor Customer [0.90, 0.95]\n  component App [0.70, 0.70]\n  Customer -> App",
+    "docs": "https://mermaid.js.org/syntax/wardley.html",
+    "minimum_version": "11.14.0"
+  },
+  {
+    "name": "XY",
+    "keyword": "xychart-beta",
+    "aliases": [
+      "XY chart",
+      "line chart",
+      "bar chart"
+    ],
+    "what": "Numerical values against an ordered x axis.",
+    "when": "Use for trends or comparable measurements over categories or time.",
+    "how": "Declare x and y axes, then add line or bar series in x-axis order.",
+    "starter": "xychart-beta\n  x-axis [Jan, Feb, Mar]\n  y-axis \"Count\" 0 --> 10\n  line [2, 5, 8]",
+    "docs": "https://mermaid.js.org/syntax/xyChart.html"
+  },
+  {
+    "name": "ZenUML",
+    "keyword": "zenuml",
+    "aliases": [
+      "zen uml"
+    ],
+    "what": "Sequence interactions with call-like nesting.",
+    "when": "Use when nested calls, returns, or control blocks communicate behavior better than a basic sequence view.",
+    "how": "Write interactions using ZenUML call or arrow syntax; its syntax differs from sequenceDiagram.",
+    "starter": "zenuml\n  Alice->Bob: Request\n  Bob->Alice: Response",
+    "docs": "https://mermaid.js.org/syntax/zenuml.html"
+  }
+]
